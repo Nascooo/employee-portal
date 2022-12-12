@@ -13,16 +13,12 @@ import org.springframework.statemachine.config.builders.StateMachineStateConfigu
 import org.springframework.statemachine.config.builders.StateMachineTransitionConfigurer;
 import org.springframework.statemachine.listener.StateMachineListener;
 import org.springframework.statemachine.listener.StateMachineListenerAdapter;
-import org.springframework.statemachine.persist.StateMachineRuntimePersister;
 import org.springframework.statemachine.state.State;
 
 @Slf4j
 @Configuration
 @EnableStateMachineFactory
-@AllArgsConstructor
 public class StateMachineConfig extends EnumStateMachineConfigurerAdapter<EmployeeStates, EmployeeEvents> {
-
-    private StateMachineRuntimePersister<EmployeeStates, EmployeeEvents, String> stateMachineRuntimePersister;
 
     @Bean
     public StateMachineListener<EmployeeStates, EmployeeEvents> listener() {
